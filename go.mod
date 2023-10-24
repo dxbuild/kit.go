@@ -1,4 +1,4 @@
-module github.com/dxbuild/kit
+module github.com/dxbuild/kit.go
 
 go 1.21.0
 
