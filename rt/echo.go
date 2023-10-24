@@ -4,7 +4,7 @@ import (
 	"context"
 	"time"
 
-	"github.com/dxbuild/kit/mw"
+	"github.com/dxbuild/kit.go/mw"
 	"github.com/labstack/echo/v4"
 	"github.com/labstack/echo/v4/middleware"
 	"github.com/rs/zerolog"
