@@ -1,0 +1,1751 @@
+{
+    "swagger": "2.0",
+    "info": {
+        "description": "This is the API for the Apigear Hub",
+        "title": "Apigear Hub API",
+        "contact": {}
+    },
+    "basePath": "/api/v1",
+    "paths": {
+        "/doc/documents/create": {
+            "post": {
+                "description": "create",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "doc"
+                ],
+                "summary": "create",
+                "parameters": [
+                    {
+                        "description": "create",
+                        "name": "params",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/doc.DocumentsCreateParams"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/doc.DocumentsCreateResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/doc/documents/delete": {
+            "post": {
+                "description": "delete",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "doc"
+                ],
+                "summary": "delete",
+                "parameters": [
+                    {
+                        "description": "delete",
+                        "name": "params",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/doc.DocumentsDeleteParams"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/doc.DocumentsDeleteResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/doc/documents/get": {
+            "post": {
+                "description": "get",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "doc"
+                ],
+                "summary": "get",
+                "parameters": [
+                    {
+                        "description": "get",
+                        "name": "params",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/doc.DocumentsGetParams"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/doc.DocumentsGetResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/doc/documents/list": {
+            "post": {
+                "description": "list",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "doc"
+                ],
+                "summary": "list",
+                "parameters": [
+                    {
+                        "description": "list",
+                        "name": "params",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/doc.DocumentsListParams"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/doc.DocumentsListResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/doc/documents/update": {
+            "post": {
+                "description": "update",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "doc"
+                ],
+                "summary": "update",
+                "parameters": [
+                    {
+                        "description": "update",
+                        "name": "params",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/doc.DocumentsUpdateParams"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/doc.DocumentsUpdateResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/job/jobs/create": {
+            "post": {
+                "description": "create",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "job"
+                ],
+                "summary": "create",
+                "parameters": [
+                    {
+                        "description": "create",
+                        "name": "params",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/job.JobsCreateParams"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/job.JobsCreateResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/job/jobs/delete": {
+            "post": {
+                "description": "delete",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "job"
+                ],
+                "summary": "delete",
+                "parameters": [
+                    {
+                        "description": "delete",
+                        "name": "params",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/job.JobsDeleteParams"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/job.JobsDeleteResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/job/jobs/get": {
+            "post": {
+                "description": "get",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "job"
+                ],
+                "summary": "get",
+                "parameters": [
+                    {
+                        "description": "get",
+                        "name": "params",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/job.JobsGetParams"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/job.JobsGetResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/job/jobs/list": {
+            "post": {
+                "description": "list",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "job"
+                ],
+                "summary": "list",
+                "parameters": [
+                    {
+                        "description": "list",
+                        "name": "params",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/job.JobsListParams"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/job.JobsListResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/job/jobs/update": {
+            "post": {
+                "description": "update",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "job"
+                ],
+                "summary": "update",
+                "parameters": [
+                    {
+                        "description": "update",
+                        "name": "params",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/job.JobsUpdateParams"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/job.JobsUpdateResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/prj/projects/create": {
+            "post": {
+                "description": "create",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "prj"
+                ],
+                "summary": "create",
+                "parameters": [
+                    {
+                        "description": "create",
+                        "name": "params",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/prj.ProjectsCreateParams"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/prj.ProjectsCreateResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/prj/projects/delete": {
+            "post": {
+                "description": "delete",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "prj"
+                ],
+                "summary": "delete",
+                "parameters": [
+                    {
+                        "description": "delete",
+                        "name": "params",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/prj.ProjectsDeleteParams"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/prj.ProjectsDeleteResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/prj/projects/get": {
+            "post": {
+                "description": "get",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "prj"
+                ],
+                "summary": "get",
+                "parameters": [
+                    {
+                        "description": "get",
+                        "name": "params",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/prj.ProjectsGetParams"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/prj.ProjectsGetResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/prj/projects/list": {
+            "post": {
+                "description": "list",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "prj"
+                ],
+                "summary": "list",
+                "parameters": [
+                    {
+                        "description": "list",
+                        "name": "params",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/prj.ProjectsListParams"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/prj.ProjectsListResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/prj/projects/update": {
+            "post": {
+                "description": "update",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "prj"
+                ],
+                "summary": "update",
+                "parameters": [
+                    {
+                        "description": "update",
+                        "name": "params",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/prj.ProjectsUpdateParams"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/prj.ProjectsUpdateResult"
+                        }
+                    }
+                }
+            }
+        },
+        "/projects": {
+            "get": {
+                "description": "List projects",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "projects"
+                ],
+                "summary": "List projects",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Page",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Limit",
+                        "name": "limit",
+                        "in": "query"
+                    },
+                    {
+                        "type": "string",
+                        "description": "Search",
+                        "name": "search",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/kit.Page-prj_ProjectData"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Create project",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "projects"
+                ],
+                "summary": "Create project",
+                "parameters": [
+                    {
+                        "description": "Project",
+                        "name": "project",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/prj.ProjectData"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/prj.ProjectData"
+                        }
+                    }
+                }
+            }
+        },
+        "/projects/{projectId}": {
+            "get": {
+                "description": "Get project",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "projects"
+                ],
+                "summary": "Get project",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "ID",
+                        "name": "projectId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/prj.ProjectData"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Update project",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "projects"
+                ],
+                "summary": "Update project",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "ID",
+                        "name": "projectId",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Project",
+                        "name": "project",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/prj.ProjectData"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/prj.ProjectData"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Delete project",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "projects"
+                ],
+                "summary": "Delete project",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "ID",
+                        "name": "projectId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/projects/{projectId}/documents": {
+            "get": {
+                "description": "List documents",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "documents"
+                ],
+                "summary": "List documents",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Project ID",
+                        "name": "projectId",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Page",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Limit",
+                        "name": "limit",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/kit.Page-doc_DocumentData"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Create document",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "documents"
+                ],
+                "summary": "Create document",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Project ID",
+                        "name": "projectId",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Document",
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/doc.DocumentData"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/doc.DocumentData"
+                        }
+                    }
+                }
+            }
+        },
+        "/projects/{projectId}/documents/{documentId}": {
+            "get": {
+                "description": "Get document",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "documents"
+                ],
+                "summary": "Get document",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Project ID",
+                        "name": "projectId",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Document ID",
+                        "name": "documentId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/doc.DocumentData"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Update document",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "documents"
+                ],
+                "summary": "Update document",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Project ID",
+                        "name": "projectId",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Document ID",
+                        "name": "documentId",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Document",
+                        "name": "body",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/doc.DocumentData"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/doc.DocumentData"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Delete document",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "documents"
+                ],
+                "summary": "Delete document",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Project ID",
+                        "name": "projectId",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Document ID",
+                        "name": "documentId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK"
+                    }
+                }
+            }
+        },
+        "/projects/{projectId}/jobs": {
+            "get": {
+                "description": "List jobs",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "jobs"
+                ],
+                "summary": "List jobs",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Project ID",
+                        "name": "projectId",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Page",
+                        "name": "page",
+                        "in": "query"
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Limit",
+                        "name": "limit",
+                        "in": "query"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/kit.Page-job_JobData"
+                        }
+                    }
+                }
+            },
+            "post": {
+                "description": "Create job",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "jobs"
+                ],
+                "summary": "Create job",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Project ID",
+                        "name": "projectID",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Job",
+                        "name": "job",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/job.JobData"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/job.JobData"
+                        }
+                    }
+                }
+            }
+        },
+        "/projects/{projectId}/jobs/{jobId}": {
+            "get": {
+                "description": "Get job",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "jobs"
+                ],
+                "summary": "Get job",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Project ID",
+                        "name": "projectId",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Job ID",
+                        "name": "jobId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/job.JobData"
+                        }
+                    }
+                }
+            },
+            "put": {
+                "description": "Update job",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "jobs"
+                ],
+                "summary": "Update job",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Project ID",
+                        "name": "projectId",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Job ID",
+                        "name": "jobId",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "description": "Job",
+                        "name": "job",
+                        "in": "body",
+                        "required": true,
+                        "schema": {
+                            "$ref": "#/definitions/job.JobData"
+                        }
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/job.JobData"
+                        }
+                    }
+                }
+            },
+            "delete": {
+                "description": "Delete job",
+                "consumes": [
+                    "application/json"
+                ],
+                "produces": [
+                    "application/json"
+                ],
+                "tags": [
+                    "jobs"
+                ],
+                "summary": "Delete job",
+                "parameters": [
+                    {
+                        "type": "integer",
+                        "description": "Project ID",
+                        "name": "projectId",
+                        "in": "path",
+                        "required": true
+                    },
+                    {
+                        "type": "integer",
+                        "description": "Job ID",
+                        "name": "jobId",
+                        "in": "path",
+                        "required": true
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "OK",
+                        "schema": {
+                            "$ref": "#/definitions/job.JobData"
+                        }
+                    }
+                }
+            }
+        }
+    },
+    "definitions": {
+        "core.JobState": {
+            "type": "string",
+            "enum": [
+                "pending",
+                "running",
+                "done"
+            ],
+            "x-enum-varnames": [
+                "StatePending",
+                "StateRunning",
+                "StateDone"
+            ]
+        },
+        "core.Kind": {
+            "type": "string",
+            "enum": [
+                "module",
+                "solution"
+            ],
+            "x-enum-varnames": [
+                "KindModule",
+                "KindSolution"
+            ]
+        },
+        "doc.DocKind": {
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ],
+            "x-enum-varnames": [
+                "DocKindModule",
+                "DocKindSolution"
+            ]
+        },
+        "doc.Document": {
+            "type": "object",
+            "properties": {
+                "content": {
+                    "type": "string"
+                },
+                "created": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "kind": {
+                    "$ref": "#/definitions/doc.DocKind"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "updated": {
+                    "type": "string"
+                }
+            }
+        },
+        "doc.DocumentData": {
+            "type": "object",
+            "properties": {
+                "content": {
+                    "type": "string"
+                },
+                "createdAt": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "kind": {
+                    "$ref": "#/definitions/core.Kind"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "projectId": {
+                    "type": "integer"
+                },
+                "updatedAt": {
+                    "type": "string"
+                }
+            }
+        },
+        "doc.DocumentPage": {
+            "type": "object",
+            "properties": {
+                "info": {
+                    "$ref": "#/definitions/doc.PageInfo"
+                },
+                "rows": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/doc.Document"
+                    }
+                }
+            }
+        },
+        "doc.DocumentsCreateParams": {
+            "type": "object",
+            "properties": {
+                "doc": {
+                    "$ref": "#/definitions/doc.Document"
+                }
+            }
+        },
+        "doc.DocumentsCreateResult": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/doc.Document"
+                }
+            }
+        },
+        "doc.DocumentsDeleteParams": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                }
+            }
+        },
+        "doc.DocumentsDeleteResult": {
+            "type": "object"
+        },
+        "doc.DocumentsGetParams": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                }
+            }
+        },
+        "doc.DocumentsGetResult": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/doc.Document"
+                }
+            }
+        },
+        "doc.DocumentsListParams": {
+            "type": "object",
+            "properties": {
+                "info": {
+                    "$ref": "#/definitions/doc.PageInfo"
+                },
+                "projectId": {
+                    "type": "integer"
+                }
+            }
+        },
+        "doc.DocumentsListResult": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/doc.DocumentPage"
+                }
+            }
+        },
+        "doc.DocumentsUpdateParams": {
+            "type": "object",
+            "properties": {
+                "doc": {
+                    "$ref": "#/definitions/doc.Document"
+                }
+            }
+        },
+        "doc.DocumentsUpdateResult": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/doc.Document"
+                }
+            }
+        },
+        "doc.PageInfo": {
+            "type": "object",
+            "properties": {
+                "filter": {
+                    "type": "string"
+                },
+                "page": {
+                    "type": "integer"
+                },
+                "size": {
+                    "type": "integer"
+                },
+                "sort": {
+                    "$ref": "#/definitions/doc.SortOrder"
+                },
+                "total": {
+                    "type": "integer"
+                }
+            }
+        },
+        "doc.SortOrder": {
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ],
+            "x-enum-varnames": [
+                "SortOrderAsc",
+                "SortOrderDesc"
+            ]
+        },
+        "job.Job": {
+            "type": "object",
+            "properties": {
+                "asset": {
+                    "type": "string"
+                },
+                "created": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "documentId": {
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "updated": {
+                    "type": "string"
+                }
+            }
+        },
+        "job.JobData": {
+            "type": "object",
+            "properties": {
+                "archive": {
+                    "type": "string"
+                },
+                "createdAt": {
+                    "type": "string"
+                },
+                "documentId": {
+                    "type": "integer"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "projectId": {
+                    "type": "integer"
+                },
+                "result": {
+                    "type": "string"
+                },
+                "script": {
+                    "type": "string"
+                },
+                "state": {
+                    "$ref": "#/definitions/core.JobState"
+                },
+                "updatedAt": {
+                    "type": "string"
+                }
+            }
+        },
+        "job.JobPage": {
+            "type": "object",
+            "properties": {
+                "filter": {
+                    "type": "string"
+                },
+                "page": {
+                    "type": "integer"
+                },
+                "rows": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/job.Job"
+                    }
+                },
+                "size": {
+                    "type": "integer"
+                },
+                "sort": {
+                    "$ref": "#/definitions/job.SortOrder"
+                },
+                "total": {
+                    "type": "integer"
+                }
+            }
+        },
+        "job.JobsCreateParams": {
+            "type": "object",
+            "properties": {
+                "doc": {
+                    "$ref": "#/definitions/job.Job"
+                }
+            }
+        },
+        "job.JobsCreateResult": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/job.Job"
+                }
+            }
+        },
+        "job.JobsDeleteParams": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                }
+            }
+        },
+        "job.JobsDeleteResult": {
+            "type": "object"
+        },
+        "job.JobsGetParams": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                }
+            }
+        },
+        "job.JobsGetResult": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/job.Job"
+                }
+            }
+        },
+        "job.JobsListParams": {
+            "type": "object",
+            "properties": {
+                "filter": {
+                    "type": "string"
+                },
+                "page": {
+                    "type": "integer"
+                },
+                "size": {
+                    "type": "integer"
+                },
+                "sort": {
+                    "$ref": "#/definitions/job.SortOrder"
+                }
+            }
+        },
+        "job.JobsListResult": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/job.JobPage"
+                }
+            }
+        },
+        "job.JobsUpdateParams": {
+            "type": "object",
+            "properties": {
+                "doc": {
+                    "$ref": "#/definitions/job.Job"
+                }
+            }
+        },
+        "job.JobsUpdateResult": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/job.Job"
+                }
+            }
+        },
+        "job.SortOrder": {
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ],
+            "x-enum-varnames": [
+                "SortOrderAsc",
+                "SortOrderDesc"
+            ]
+        },
+        "kit.Page-doc_DocumentData": {
+            "type": "object",
+            "properties": {
+                "limit": {
+                    "type": "integer"
+                },
+                "page": {
+                    "type": "integer"
+                },
+                "rows": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/doc.DocumentData"
+                    }
+                },
+                "search": {
+                    "type": "string"
+                },
+                "sort": {
+                    "type": "string"
+                },
+                "total_pages": {
+                    "type": "integer"
+                },
+                "total_rows": {
+                    "type": "integer"
+                }
+            }
+        },
+        "kit.Page-job_JobData": {
+            "type": "object",
+            "properties": {
+                "limit": {
+                    "type": "integer"
+                },
+                "page": {
+                    "type": "integer"
+                },
+                "rows": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/job.JobData"
+                    }
+                },
+                "search": {
+                    "type": "string"
+                },
+                "sort": {
+                    "type": "string"
+                },
+                "total_pages": {
+                    "type": "integer"
+                },
+                "total_rows": {
+                    "type": "integer"
+                }
+            }
+        },
+        "kit.Page-prj_ProjectData": {
+            "type": "object",
+            "properties": {
+                "limit": {
+                    "type": "integer"
+                },
+                "page": {
+                    "type": "integer"
+                },
+                "rows": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/prj.ProjectData"
+                    }
+                },
+                "search": {
+                    "type": "string"
+                },
+                "sort": {
+                    "type": "string"
+                },
+                "total_pages": {
+                    "type": "integer"
+                },
+                "total_rows": {
+                    "type": "integer"
+                }
+            }
+        },
+        "prj.Project": {
+            "type": "object",
+            "properties": {
+                "createdAt": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "type": "string"
+                }
+            }
+        },
+        "prj.ProjectData": {
+            "type": "object",
+            "properties": {
+                "createdAt": {
+                    "type": "string"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "id": {
+                    "type": "integer"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "updatedAt": {
+                    "type": "string"
+                }
+            }
+        },
+        "prj.ProjectPage": {
+            "type": "object",
+            "properties": {
+                "filter": {
+                    "type": "string"
+                },
+                "page": {
+                    "type": "integer"
+                },
+                "rows": {
+                    "type": "array",
+                    "items": {
+                        "$ref": "#/definitions/prj.Project"
+                    }
+                },
+                "size": {
+                    "type": "integer"
+                },
+                "sort": {
+                    "$ref": "#/definitions/prj.SortOrder"
+                },
+                "total": {
+                    "type": "integer"
+                }
+            }
+        },
+        "prj.ProjectsCreateParams": {
+            "type": "object",
+            "properties": {
+                "project": {
+                    "$ref": "#/definitions/prj.Project"
+                }
+            }
+        },
+        "prj.ProjectsCreateResult": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/prj.Project"
+                }
+            }
+        },
+        "prj.ProjectsDeleteParams": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                }
+            }
+        },
+        "prj.ProjectsDeleteResult": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "prj.ProjectsGetParams": {
+            "type": "object",
+            "properties": {
+                "id": {
+                    "type": "integer"
+                }
+            }
+        },
+        "prj.ProjectsGetResult": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/prj.Project"
+                }
+            }
+        },
+        "prj.ProjectsListParams": {
+            "type": "object",
+            "properties": {
+                "filter": {
+                    "type": "string"
+                },
+                "page": {
+                    "type": "integer"
+                },
+                "size": {
+                    "type": "integer"
+                },
+                "sort": {
+                    "$ref": "#/definitions/prj.SortOrder"
+                }
+            }
+        },
+        "prj.ProjectsListResult": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/prj.ProjectPage"
+                }
+            }
+        },
+        "prj.ProjectsUpdateParams": {
+            "type": "object",
+            "properties": {
+                "project": {
+                    "$ref": "#/definitions/prj.Project"
+                }
+            }
+        },
+        "prj.ProjectsUpdateResult": {
+            "type": "object",
+            "properties": {
+                "data": {
+                    "$ref": "#/definitions/prj.Project"
+                }
+            }
+        },
+        "prj.SortOrder": {
+            "type": "integer",
+            "enum": [
+                0,
+                1
+            ],
+            "x-enum-varnames": [
+                "SortOrderAsc",
+                "SortOrderDesc"
+            ]
+        }
+    }
+}

@@ -1,0 +1,1147 @@
+basePath: /api/v1
+definitions:
+  core.JobState:
+    enum:
+    - pending
+    - running
+    - done
+    type: string
+    x-enum-varnames:
+    - StatePending
+    - StateRunning
+    - StateDone
+  core.Kind:
+    enum:
+    - module
+    - solution
+    type: string
+    x-enum-varnames:
+    - KindModule
+    - KindSolution
+  doc.DocKind:
+    enum:
+    - 0
+    - 1
+    type: integer
+    x-enum-varnames:
+    - DocKindModule
+    - DocKindSolution
+  doc.Document:
+    properties:
+      content:
+        type: string
+      created:
+        type: string
+      description:
+        type: string
+      id:
+        type: integer
+      kind:
+        $ref: '#/definitions/doc.DocKind'
+      name:
+        type: string
+      updated:
+        type: string
+    type: object
+  doc.DocumentData:
+    properties:
+      content:
+        type: string
+      createdAt:
+        type: string
+      description:
+        type: string
+      id:
+        type: integer
+      kind:
+        $ref: '#/definitions/core.Kind'
+      name:
+        type: string
+      projectId:
+        type: integer
+      updatedAt:
+        type: string
+    type: object
+  doc.DocumentPage:
+    properties:
+      info:
+        $ref: '#/definitions/doc.PageInfo'
+      rows:
+        items:
+          $ref: '#/definitions/doc.Document'
+        type: array
+    type: object
+  doc.DocumentsCreateParams:
+    properties:
+      doc:
+        $ref: '#/definitions/doc.Document'
+    type: object
+  doc.DocumentsCreateResult:
+    properties:
+      data:
+        $ref: '#/definitions/doc.Document'
+    type: object
+  doc.DocumentsDeleteParams:
+    properties:
+      id:
+        type: integer
+    type: object
+  doc.DocumentsDeleteResult:
+    type: object
+  doc.DocumentsGetParams:
+    properties:
+      id:
+        type: integer
+    type: object
+  doc.DocumentsGetResult:
+    properties:
+      data:
+        $ref: '#/definitions/doc.Document'
+    type: object
+  doc.DocumentsListParams:
+    properties:
+      info:
+        $ref: '#/definitions/doc.PageInfo'
+      projectId:
+        type: integer
+    type: object
+  doc.DocumentsListResult:
+    properties:
+      data:
+        $ref: '#/definitions/doc.DocumentPage'
+    type: object
+  doc.DocumentsUpdateParams:
+    properties:
+      doc:
+        $ref: '#/definitions/doc.Document'
+    type: object
+  doc.DocumentsUpdateResult:
+    properties:
+      data:
+        $ref: '#/definitions/doc.Document'
+    type: object
+  doc.PageInfo:
+    properties:
+      filter:
+        type: string
+      page:
+        type: integer
+      size:
+        type: integer
+      sort:
+        $ref: '#/definitions/doc.SortOrder'
+      total:
+        type: integer
+    type: object
+  doc.SortOrder:
+    enum:
+    - 0
+    - 1
+    type: integer
+    x-enum-varnames:
+    - SortOrderAsc
+    - SortOrderDesc
+  job.Job:
+    properties:
+      asset:
+        type: string
+      created:
+        type: string
+      description:
+        type: string
+      documentId:
+        type: integer
+      id:
+        type: integer
+      name:
+        type: string
+      updated:
+        type: string
+    type: object
+  job.JobData:
+    properties:
+      archive:
+        type: string
+      createdAt:
+        type: string
+      documentId:
+        type: integer
+      id:
+        type: integer
+      name:
+        type: string
+      projectId:
+        type: integer
+      result:
+        type: string
+      script:
+        type: string
+      state:
+        $ref: '#/definitions/core.JobState'
+      updatedAt:
+        type: string
+    type: object
+  job.JobPage:
+    properties:
+      filter:
+        type: string
+      page:
+        type: integer
+      rows:
+        items:
+          $ref: '#/definitions/job.Job'
+        type: array
+      size:
+        type: integer
+      sort:
+        $ref: '#/definitions/job.SortOrder'
+      total:
+        type: integer
+    type: object
+  job.JobsCreateParams:
+    properties:
+      doc:
+        $ref: '#/definitions/job.Job'
+    type: object
+  job.JobsCreateResult:
+    properties:
+      data:
+        $ref: '#/definitions/job.Job'
+    type: object
+  job.JobsDeleteParams:
+    properties:
+      id:
+        type: integer
+    type: object
+  job.JobsDeleteResult:
+    type: object
+  job.JobsGetParams:
+    properties:
+      id:
+        type: integer
+    type: object
+  job.JobsGetResult:
+    properties:
+      data:
+        $ref: '#/definitions/job.Job'
+    type: object
+  job.JobsListParams:
+    properties:
+      filter:
+        type: string
+      page:
+        type: integer
+      size:
+        type: integer
+      sort:
+        $ref: '#/definitions/job.SortOrder'
+    type: object
+  job.JobsListResult:
+    properties:
+      data:
+        $ref: '#/definitions/job.JobPage'
+    type: object
+  job.JobsUpdateParams:
+    properties:
+      doc:
+        $ref: '#/definitions/job.Job'
+    type: object
+  job.JobsUpdateResult:
+    properties:
+      data:
+        $ref: '#/definitions/job.Job'
+    type: object
+  job.SortOrder:
+    enum:
+    - 0
+    - 1
+    type: integer
+    x-enum-varnames:
+    - SortOrderAsc
+    - SortOrderDesc
+  kit.Page-doc_DocumentData:
+    properties:
+      limit:
+        type: integer
+      page:
+        type: integer
+      rows:
+        items:
+          $ref: '#/definitions/doc.DocumentData'
+        type: array
+      search:
+        type: string
+      sort:
+        type: string
+      total_pages:
+        type: integer
+      total_rows:
+        type: integer
+    type: object
+  kit.Page-job_JobData:
+    properties:
+      limit:
+        type: integer
+      page:
+        type: integer
+      rows:
+        items:
+          $ref: '#/definitions/job.JobData'
+        type: array
+      search:
+        type: string
+      sort:
+        type: string
+      total_pages:
+        type: integer
+      total_rows:
+        type: integer
+    type: object
+  kit.Page-prj_ProjectData:
+    properties:
+      limit:
+        type: integer
+      page:
+        type: integer
+      rows:
+        items:
+          $ref: '#/definitions/prj.ProjectData'
+        type: array
+      search:
+        type: string
+      sort:
+        type: string
+      total_pages:
+        type: integer
+      total_rows:
+        type: integer
+    type: object
+  prj.Project:
+    properties:
+      createdAt:
+        type: string
+      description:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      updatedAt:
+        type: string
+    type: object
+  prj.ProjectData:
+    properties:
+      createdAt:
+        type: string
+      description:
+        type: string
+      id:
+        type: integer
+      name:
+        type: string
+      updatedAt:
+        type: string
+    type: object
+  prj.ProjectPage:
+    properties:
+      filter:
+        type: string
+      page:
+        type: integer
+      rows:
+        items:
+          $ref: '#/definitions/prj.Project'
+        type: array
+      size:
+        type: integer
+      sort:
+        $ref: '#/definitions/prj.SortOrder'
+      total:
+        type: integer
+    type: object
+  prj.ProjectsCreateParams:
+    properties:
+      project:
+        $ref: '#/definitions/prj.Project'
+    type: object
+  prj.ProjectsCreateResult:
+    properties:
+      data:
+        $ref: '#/definitions/prj.Project'
+    type: object
+  prj.ProjectsDeleteParams:
+    properties:
+      id:
+        type: integer
+    type: object
+  prj.ProjectsDeleteResult:
+    properties:
+      data:
+        type: boolean
+    type: object
+  prj.ProjectsGetParams:
+    properties:
+      id:
+        type: integer
+    type: object
+  prj.ProjectsGetResult:
+    properties:
+      data:
+        $ref: '#/definitions/prj.Project'
+    type: object
+  prj.ProjectsListParams:
+    properties:
+      filter:
+        type: string
+      page:
+        type: integer
+      size:
+        type: integer
+      sort:
+        $ref: '#/definitions/prj.SortOrder'
+    type: object
+  prj.ProjectsListResult:
+    properties:
+      data:
+        $ref: '#/definitions/prj.ProjectPage'
+    type: object
+  prj.ProjectsUpdateParams:
+    properties:
+      project:
+        $ref: '#/definitions/prj.Project'
+    type: object
+  prj.ProjectsUpdateResult:
+    properties:
+      data:
+        $ref: '#/definitions/prj.Project'
+    type: object
+  prj.SortOrder:
+    enum:
+    - 0
+    - 1
+    type: integer
+    x-enum-varnames:
+    - SortOrderAsc
+    - SortOrderDesc
+info:
+  contact: {}
+  description: This is the API for the Apigear Hub
+  title: Apigear Hub API
+paths:
+  /doc/documents/create:
+    post:
+      consumes:
+      - application/json
+      description: create
+      parameters:
+      - description: create
+        in: body
+        name: params
+        required: true
+        schema:
+          $ref: '#/definitions/doc.DocumentsCreateParams'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.DocumentsCreateResult'
+      summary: create
+      tags:
+      - doc
+  /doc/documents/delete:
+    post:
+      consumes:
+      - application/json
+      description: delete
+      parameters:
+      - description: delete
+        in: body
+        name: params
+        required: true
+        schema:
+          $ref: '#/definitions/doc.DocumentsDeleteParams'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.DocumentsDeleteResult'
+      summary: delete
+      tags:
+      - doc
+  /doc/documents/get:
+    post:
+      consumes:
+      - application/json
+      description: get
+      parameters:
+      - description: get
+        in: body
+        name: params
+        required: true
+        schema:
+          $ref: '#/definitions/doc.DocumentsGetParams'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.DocumentsGetResult'
+      summary: get
+      tags:
+      - doc
+  /doc/documents/list:
+    post:
+      consumes:
+      - application/json
+      description: list
+      parameters:
+      - description: list
+        in: body
+        name: params
+        required: true
+        schema:
+          $ref: '#/definitions/doc.DocumentsListParams'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.DocumentsListResult'
+      summary: list
+      tags:
+      - doc
+  /doc/documents/update:
+    post:
+      consumes:
+      - application/json
+      description: update
+      parameters:
+      - description: update
+        in: body
+        name: params
+        required: true
+        schema:
+          $ref: '#/definitions/doc.DocumentsUpdateParams'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.DocumentsUpdateResult'
+      summary: update
+      tags:
+      - doc
+  /job/jobs/create:
+    post:
+      consumes:
+      - application/json
+      description: create
+      parameters:
+      - description: create
+        in: body
+        name: params
+        required: true
+        schema:
+          $ref: '#/definitions/job.JobsCreateParams'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/job.JobsCreateResult'
+      summary: create
+      tags:
+      - job
+  /job/jobs/delete:
+    post:
+      consumes:
+      - application/json
+      description: delete
+      parameters:
+      - description: delete
+        in: body
+        name: params
+        required: true
+        schema:
+          $ref: '#/definitions/job.JobsDeleteParams'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/job.JobsDeleteResult'
+      summary: delete
+      tags:
+      - job
+  /job/jobs/get:
+    post:
+      consumes:
+      - application/json
+      description: get
+      parameters:
+      - description: get
+        in: body
+        name: params
+        required: true
+        schema:
+          $ref: '#/definitions/job.JobsGetParams'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/job.JobsGetResult'
+      summary: get
+      tags:
+      - job
+  /job/jobs/list:
+    post:
+      consumes:
+      - application/json
+      description: list
+      parameters:
+      - description: list
+        in: body
+        name: params
+        required: true
+        schema:
+          $ref: '#/definitions/job.JobsListParams'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/job.JobsListResult'
+      summary: list
+      tags:
+      - job
+  /job/jobs/update:
+    post:
+      consumes:
+      - application/json
+      description: update
+      parameters:
+      - description: update
+        in: body
+        name: params
+        required: true
+        schema:
+          $ref: '#/definitions/job.JobsUpdateParams'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/job.JobsUpdateResult'
+      summary: update
+      tags:
+      - job
+  /prj/projects/create:
+    post:
+      consumes:
+      - application/json
+      description: create
+      parameters:
+      - description: create
+        in: body
+        name: params
+        required: true
+        schema:
+          $ref: '#/definitions/prj.ProjectsCreateParams'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/prj.ProjectsCreateResult'
+      summary: create
+      tags:
+      - prj
+  /prj/projects/delete:
+    post:
+      consumes:
+      - application/json
+      description: delete
+      parameters:
+      - description: delete
+        in: body
+        name: params
+        required: true
+        schema:
+          $ref: '#/definitions/prj.ProjectsDeleteParams'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/prj.ProjectsDeleteResult'
+      summary: delete
+      tags:
+      - prj
+  /prj/projects/get:
+    post:
+      consumes:
+      - application/json
+      description: get
+      parameters:
+      - description: get
+        in: body
+        name: params
+        required: true
+        schema:
+          $ref: '#/definitions/prj.ProjectsGetParams'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/prj.ProjectsGetResult'
+      summary: get
+      tags:
+      - prj
+  /prj/projects/list:
+    post:
+      consumes:
+      - application/json
+      description: list
+      parameters:
+      - description: list
+        in: body
+        name: params
+        required: true
+        schema:
+          $ref: '#/definitions/prj.ProjectsListParams'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/prj.ProjectsListResult'
+      summary: list
+      tags:
+      - prj
+  /prj/projects/update:
+    post:
+      consumes:
+      - application/json
+      description: update
+      parameters:
+      - description: update
+        in: body
+        name: params
+        required: true
+        schema:
+          $ref: '#/definitions/prj.ProjectsUpdateParams'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/prj.ProjectsUpdateResult'
+      summary: update
+      tags:
+      - prj
+  /projects:
+    get:
+      consumes:
+      - application/json
+      description: List projects
+      parameters:
+      - description: Page
+        in: query
+        name: page
+        type: integer
+      - description: Limit
+        in: query
+        name: limit
+        type: integer
+      - description: Search
+        in: query
+        name: search
+        type: string
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/kit.Page-prj_ProjectData'
+      summary: List projects
+      tags:
+      - projects
+    post:
+      consumes:
+      - application/json
+      description: Create project
+      parameters:
+      - description: Project
+        in: body
+        name: project
+        required: true
+        schema:
+          $ref: '#/definitions/prj.ProjectData'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/prj.ProjectData'
+      summary: Create project
+      tags:
+      - projects
+  /projects/{projectId}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete project
+      parameters:
+      - description: ID
+        in: path
+        name: projectId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Delete project
+      tags:
+      - projects
+    get:
+      consumes:
+      - application/json
+      description: Get project
+      parameters:
+      - description: ID
+        in: path
+        name: projectId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/prj.ProjectData'
+      summary: Get project
+      tags:
+      - projects
+    put:
+      consumes:
+      - application/json
+      description: Update project
+      parameters:
+      - description: ID
+        in: path
+        name: projectId
+        required: true
+        type: integer
+      - description: Project
+        in: body
+        name: project
+        required: true
+        schema:
+          $ref: '#/definitions/prj.ProjectData'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/prj.ProjectData'
+      summary: Update project
+      tags:
+      - projects
+  /projects/{projectId}/documents:
+    get:
+      consumes:
+      - application/json
+      description: List documents
+      parameters:
+      - description: Project ID
+        in: path
+        name: projectId
+        required: true
+        type: integer
+      - description: Page
+        in: query
+        name: page
+        type: integer
+      - description: Limit
+        in: query
+        name: limit
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/kit.Page-doc_DocumentData'
+      summary: List documents
+      tags:
+      - documents
+    post:
+      consumes:
+      - application/json
+      description: Create document
+      parameters:
+      - description: Project ID
+        in: path
+        name: projectId
+        required: true
+        type: integer
+      - description: Document
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.DocumentData'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.DocumentData'
+      summary: Create document
+      tags:
+      - documents
+  /projects/{projectId}/documents/{documentId}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete document
+      parameters:
+      - description: Project ID
+        in: path
+        name: projectId
+        required: true
+        type: integer
+      - description: Document ID
+        in: path
+        name: documentId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+      summary: Delete document
+      tags:
+      - documents
+    get:
+      consumes:
+      - application/json
+      description: Get document
+      parameters:
+      - description: Project ID
+        in: path
+        name: projectId
+        required: true
+        type: integer
+      - description: Document ID
+        in: path
+        name: documentId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.DocumentData'
+      summary: Get document
+      tags:
+      - documents
+    put:
+      consumes:
+      - application/json
+      description: Update document
+      parameters:
+      - description: Project ID
+        in: path
+        name: projectId
+        required: true
+        type: integer
+      - description: Document ID
+        in: path
+        name: documentId
+        required: true
+        type: integer
+      - description: Document
+        in: body
+        name: body
+        required: true
+        schema:
+          $ref: '#/definitions/doc.DocumentData'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/doc.DocumentData'
+      summary: Update document
+      tags:
+      - documents
+  /projects/{projectId}/jobs:
+    get:
+      consumes:
+      - application/json
+      description: List jobs
+      parameters:
+      - description: Project ID
+        in: path
+        name: projectId
+        required: true
+        type: integer
+      - description: Page
+        in: query
+        name: page
+        type: integer
+      - description: Limit
+        in: query
+        name: limit
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/kit.Page-job_JobData'
+      summary: List jobs
+      tags:
+      - jobs
+    post:
+      consumes:
+      - application/json
+      description: Create job
+      parameters:
+      - description: Project ID
+        in: path
+        name: projectID
+        required: true
+        type: integer
+      - description: Job
+        in: body
+        name: job
+        required: true
+        schema:
+          $ref: '#/definitions/job.JobData'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/job.JobData'
+      summary: Create job
+      tags:
+      - jobs
+  /projects/{projectId}/jobs/{jobId}:
+    delete:
+      consumes:
+      - application/json
+      description: Delete job
+      parameters:
+      - description: Project ID
+        in: path
+        name: projectId
+        required: true
+        type: integer
+      - description: Job ID
+        in: path
+        name: jobId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/job.JobData'
+      summary: Delete job
+      tags:
+      - jobs
+    get:
+      consumes:
+      - application/json
+      description: Get job
+      parameters:
+      - description: Project ID
+        in: path
+        name: projectId
+        required: true
+        type: integer
+      - description: Job ID
+        in: path
+        name: jobId
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/job.JobData'
+      summary: Get job
+      tags:
+      - jobs
+    put:
+      consumes:
+      - application/json
+      description: Update job
+      parameters:
+      - description: Project ID
+        in: path
+        name: projectId
+        required: true
+        type: integer
+      - description: Job ID
+        in: path
+        name: jobId
+        required: true
+        type: integer
+      - description: Job
+        in: body
+        name: job
+        required: true
+        schema:
+          $ref: '#/definitions/job.JobData'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/job.JobData'
+      summary: Update job
+      tags:
+      - jobs
+swagger: "2.0"
